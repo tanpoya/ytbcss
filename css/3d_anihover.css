@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+}
+
+.cube {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+}
+.cube div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: animate 6s linear infinite;
+}
+@keyframes animate {
+    0% {
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+    100% {
+        transform: rotateX(-20deg) rotateY(0deg);
+    }
+}
+
+.cube .big span {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: var(--clr);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px); /* width / 2 */
+    transform-style: preserve-3d;
+    transition: .5s;
+}
+.cube:hover .big span {
+    background: transparent;
+    border: 10px solid #ffa20d;
+    filter: drop-shadow(0 0 20px #ffa20d);
+}
+.cube .big span.top {
+    transform: rotateX(90deg) translateZ(150px);
+}
+.cube .big span.top::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* 결론은 top/right/bottom/left를 써서 포지션 값을 적는 것을 축약을 할 수 있는 것 */
+    /* t0 b0 r0 l0 */
+    transform: translateZ(-350px);
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: blur(50px);
+}
+
+/* 
+    top: 20px;
+    right: 50px;
+    bottom: 20px;
+    left: 50px;
+    위의 코드를 축약할때가 최대 장점 이것을 inset으로 표현하면
+
+    inset : 20px 50px;
+    */
+
+.cube2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -400px);
+}
+.cube2 div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: animate2 6s linear infinite;
+    scale: 0.5;
+}
+@keyframes animate2 {
+    0% {
+        transform: rotateX(-20deg) rotateY(0deg);
+    }
+    100% {
+            transform: rotateX(-20deg) rotateY(360deg);
+    }
+}
+    
+.cube2 .big span {
+position: absolute;
+width: 300px;
+height: 300px;
+background-color: var(--clr);
+transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+transform-style: preserve-3d;
+transition: .5s;
+}
+.cube:hover ~ .cube2 .big span { /* https://webty.tistory.com/60 */
+background: transparent;
+border: 10px solid #fff;
+filter: drop-shadow(0 0 20px #fff);
+}
+.cube2 .big span.top {
+transform: rotateX(90deg) translateZ(150px);
+}
+.cube2 .big span.top::before {
+content: '';
+position: absolute;
+inset: 0;
+transform: translateZ(-350px);
+background-color: rgba(0, 0, 0, 0.35);
+filter: blur(50px);
+}
