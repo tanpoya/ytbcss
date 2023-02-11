@@ -8,16 +8,8 @@
 
 body {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #929292;
-}
-
-.box {
-    width: 333px;
-    height: 333px;
-    background-color: #ff9;
-    transform: rotate(10deg);
-    text-align: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* background-color: #929292; */
 }
