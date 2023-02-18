@@ -55,6 +55,14 @@
 // }
 
 
-for(let i = 0; i < 5; i++) {
-    console.log(i + 1);
+// for(let i = 0; i < 5; i++) {
+//     console.log(i + 1);
+// }
+
+for(let i = 0; i < 3; i++) {
+    console.log(`i: ${i}`);
+    for(let l = 0; l < 2; l++) {
+        console.log(`l: ${l}`);
+    }
 }
+// i: 0, l: 0 1, i: 1, l: 0 1, i: 2, l: 0 1
