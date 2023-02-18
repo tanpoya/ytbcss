@@ -37,7 +37,7 @@ switch (food) {
         console.log("바나나");
         break;
     case "carrot":
-        console.log("carrot");
+        console.log("당근");
         break;
     default:
         console.log("default");
