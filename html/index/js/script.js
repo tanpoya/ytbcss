@@ -68,7 +68,32 @@
 // i: 0, l: 0 1, i: 1, l: 0 1, i: 2, l: 0 1
 
 
-let arr = ['banana', 'apple', 'orange'];
-for(let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
+// let arr = ['banana', 'apple', 'orange'];
+// for(let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+
+
+// 객체
+// let obj = {
+//     name: "철수",
+//     age: "20"
+// };
+// for(let key in obj) {
+//     console.log(key + ": " + obj[key]);
+// } // key = name, age   obj[key] = 값 value
+
+// 배열
+// let arr2 = ["orange", "banana", "apple"];
+// for(let index in arr2) {
+//     console.log(index + ": " + arr2[index]);
+// }
+
+
+// 반복문을 사용해 1부터 100까지의 합을 출력하는 코드를 작성하시오
+let num = 0;
+for(let i = 1; i < 101; i++) {
+    num += i;
 }
+console.log(num);
