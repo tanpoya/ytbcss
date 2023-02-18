@@ -48,14 +48,13 @@
 // }
 
 
-let nb = 1;
+// let nb = 1;
 // while(nb <= 10) {
 //     console.log(nb);
 //     nb++;
 // }
 
 
-do {
-    console.log("실행");
-    console.log("실 행");
-} while(nb < 2);
+for(let i = 0; i < 5; i++) {
+    console.log(i + 1);
+}
